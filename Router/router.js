@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express();
-const pokedexCont = require("../02-pokeDex/index.js");
+const pokedexCont = require("../Controller/index.js");
 
 
 // Testing Routes

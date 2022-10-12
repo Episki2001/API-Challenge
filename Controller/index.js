@@ -1,7 +1,7 @@
 // Retrieves data from pokemons.json
 const fs = require('fs');
 
-let rawdata = fs.readFileSync("02-pokeDex/pokemons.json");
+let rawdata = fs.readFileSync("Controller/pokemons.json");
 let data = JSON.parse(rawdata);
 
 // util functions
