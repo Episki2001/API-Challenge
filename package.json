@@ -1,0 +1,27 @@
+{
+  "name": "api-challenge",
+  "version": "1.0.0",
+  "description": "This is an API Challenge to create a sample pokedex",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Episki2001/API-Challenge.git"
+  },
+  "author": "Andre Emmanuel Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Episki2001/API-Challenge/issues"
+  },
+  "homepage": "https://github.com/Episki2001/API-Challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "nodemon": "^2.0.20"
+  }
+}
