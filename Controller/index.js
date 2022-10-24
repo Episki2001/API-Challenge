@@ -55,7 +55,7 @@ const pokedexFunctions ={
      * attack
      */
     findByResistance: async function(req,res) {
-        let attackDetails = findAttack(req.query.attack);
+        let attackDetails = findAttack(req.params.attackName);
         res.send(data.filter(data => data.Resistant.includes(attackDetails.Type)));
     },
 
@@ -64,8 +64,15 @@ const pokedexFunctions ={
      * attack
      */
     findNamesByResistance: async function(req,res) {
-        console.log(req.query.attack);
-        let attackDetails = findAttack(req.query.attack);
+        console.log(req.params.attackName);
+        let attackDetails = findAttack(req.params.attackName);
+        let withResistance = data.filter(data => data.Resistant.includes(attackDetails.Type));
+        res.send(withResistance.map(withResistance => withResistance.Name));
+    },
+
+    findNamesByResistance: async function(req,res) {
+        console.log(req.params.attackName);
+        let attackDetails = findAttack(req.params.attackName);
         let withResistance = data.filter(data => data.Resistant.includes(attackDetails.Type));
         res.send(withResistance.map(withResistance => withResistance.Name));
     },
@@ -77,7 +84,7 @@ const pokedexFunctions ={
         let withCP = data.filter(data => data.MaxCP != null);
         let avgCP = withCP.reduce((result, withCP) => {
             return result += withCP.MaxCP},0)/withCP.length;
-        res.status(200).send(avgCP.toString());
+        res.status(200).send({averageCP : avgCP.toString()});
     },
 
     /**
